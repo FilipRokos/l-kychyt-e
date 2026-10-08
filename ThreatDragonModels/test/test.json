@@ -1,28 +1,1463 @@
 {
-  "version": "2.6.2",
-  "release_version": "",
-  "released_at": "",
   "summary": {
-    "title": "test",
-    "owner": "",
-    "description": "",
+    "title": "Smart Medication Dispenser - STRIDE",
+    "owner": "Medication Dispenser Organization",
+    "description": "Threat model: patient medication dispensing, doctor-to-patient access restrictions, secure prescriptions and audit logging. Architecture is illustrative, not an assertion of deployed security controls.",
     "id": 0
   },
   "detail": {
     "contributors": [],
     "diagrams": [
       {
-        "id": 0,
-        "title": "New STRIDE diagram",
-        "diagramType": "STRIDE",
-        "placeholder": "New STRIDE diagram description",
+        "cells": [
+          {
+            "shape": "trust-boundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 990,
+            "height": 385,
+            "zIndex": 0,
+            "connector": "normal",
+            "labels": [
+              {
+                "position": 0.2,
+                "attrs": {
+                  "text": {
+                    "text": "Dispenser Software / Trust Boundary"
+                  }
+                }
+              }
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Dispenser Software / Trust Boundary",
+              "description": "Hranice důvěry: Dispenser Software / Trust Boundary",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "2ded0f32-2330-4949-bbf4-db3c51465272",
+            "source": {
+              "x": 315,
+              "y": 505
+            },
+            "target": {
+              "x": 315,
+              "y": 505
+            },
+            "vertices": [
+              {
+                "x": 1305,
+                "y": 505
+              },
+              {
+                "x": 1305,
+                "y": 890
+              },
+              {
+                "x": 315,
+                "y": 890
+              }
+            ]
+          },
+          {
+            "shape": "trust-boundary-curve",
+            "attrs": {
+              "line": {
+                "targetMarker": "",
+                "sourceMarker": ""
+              }
+            },
+            "width": 990,
+            "height": 415,
+            "zIndex": 0,
+            "connector": "normal",
+            "labels": [
+              {
+                "position": 0.2,
+                "attrs": {
+                  "text": {
+                    "text": "Central Infrastructure / Trust Boundary"
+                  }
+                }
+              }
+            ],
+            "data": {
+              "type": "tm.Boundary",
+              "name": "Central Infrastructure / Trust Boundary",
+              "description": "Hranice důvěry: Central Infrastructure / Trust Boundary",
+              "isTrustBoundary": true,
+              "hasOpenThreats": false
+            },
+            "id": "4e515cff-b213-4492-b4a5-7451de21c7cb",
+            "source": {
+              "x": 315,
+              "y": 50
+            },
+            "target": {
+              "x": 315,
+              "y": 50
+            },
+            "vertices": [
+              {
+                "x": 1305,
+                "y": 50
+              },
+              {
+                "x": 1305,
+                "y": 465
+              },
+              {
+                "x": 315,
+                "y": 465
+              }
+            ]
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 545
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Patient / Senior"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "actor",
+            "id": "5a2b70c1-0e04-4411-b94a-db5fbfdafe83",
+            "zIndex": 10,
+            "data": {
+              "name": "Patient / Senior",
+              "description": "Pacient zadává PIN nebo používá kartu a žádá o výdej.",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 40,
+              "y": 90
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Doctor / Healthcare Staff"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "actor",
+            "id": "4665ad68-051f-4079-80a9-39e16f8759a4",
+            "zIndex": 10,
+            "data": {
+              "name": "Doctor / Healthcare Staff",
+              "description": "Lékař spravuje předpisy pouze přiřazených pacientů.",
+              "type": "tm.Actor",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "providesAuthentication": false
+            }
+          },
+          {
+            "position": {
+              "x": 345,
+              "y": 95
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Central System"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844",
+            "zIndex": 10,
+            "data": {
+              "name": "Central System",
+              "description": "Webová/API vrstva centrálního systému. Zprostředkovává požadavky.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isWebApplication": true
+            }
+          },
+          {
+            "position": {
+              "x": 595,
+              "y": 95
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Doctor Authentication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "3d772033-a673-45ac-b015-7a21a6633ac3",
+            "zIndex": 10,
+            "data": {
+              "name": "Doctor Authentication",
+              "description": "Ověření lékaře a získání identity přihlášeného uživatele.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 845,
+              "y": 95
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Check Doctor Permissions"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "87c2d69d-3a7f-48e5-8a22-7c629e968766",
+            "zIndex": 10,
+            "data": {
+              "name": "Check Doctor Permissions",
+              "description": "Server kontroluje, zda je daný lékař přiřazen ke konkrétnímu pacientovi.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "title": "Doctor edits an unrelated patient",
+                  "type": "Elevation of privilege",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Lékař se pokusí změnit předpis pacienta, kterému není přiřazen.",
+                  "mitigation": "Oprávnění ověřovat na serveru při každém zápisu podle doctor ID a patient ID; zamítat neoprávněné operace.",
+                  "id": "6bd7bb7a-c7e6-4b9a-9d27-5b1ef0709191"
+                }
+              ],
+              "hasOpenThreats": true
+            }
+          },
+          {
+            "position": {
+              "x": 1090,
+              "y": 95
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Update Prescription"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "0edd25b5-6637-422d-890c-79e9d92770f8",
+            "zIndex": 10,
+            "data": {
+              "name": "Update Prescription",
+              "description": "Po kontrole oprávnění změní dávkování a vytvoří auditní záznam.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "title": "Unauthorized prescription modification",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "description": "Neoprávněná změna dávkování může vést k podání nesprávného množství léků.",
+                  "mitigation": "Transakční změny s kontrolou oprávnění, verzováním předpisů, validací a povinným auditem.",
+                  "id": "09ca4b7a-5287-4740-95ea-1672a261988b"
+                }
+              ],
+              "hasOpenThreats": true
+            }
+          },
+          {
+            "position": {
+              "x": 845,
+              "y": 300
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Prescription Database"
+              },
+              "topLine": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "store",
+            "id": "2f2e6cd0-270d-480f-a11d-a03dd83ed6da",
+            "zIndex": 10,
+            "data": {
+              "name": "Prescription Database",
+              "description": "Předpisy, přiřazení lékař-pacient, čas dávkování.",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isALog": false,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "position": {
+              "x": 1090,
+              "y": 300
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Audit Log"
+              },
+              "topLine": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "store",
+            "id": "ceb5c914-e01a-4429-be14-7f6c75ccc6bd",
+            "zIndex": 10,
+            "data": {
+              "name": "Audit Log",
+              "description": "Historie změn: kdo, kdy, komu a co změnil, původní i nové hodnoty.",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "title": "Prescription edit is denied or hidden",
+                  "type": "Repudiation",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "Zdravotník popře změnu předpisu nebo útočník upraví historii změn.",
+                  "mitigation": "Oddělená oprávnění k auditu, append-only log, ochrana integrity a časové značky.",
+                  "id": "96403e74-e8ab-4503-acfd-e8bcff6163d9"
+                }
+              ],
+              "hasOpenThreats": true,
+              "isALog": true,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "position": {
+              "x": 345,
+              "y": 550
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Patient Authentication"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "c2e056f1-5c03-44ba-b02c-9b2bd544aecb",
+            "zIndex": 10,
+            "data": {
+              "name": "Patient Authentication",
+              "description": "Ověření PIN/karty pacienta na zařízení.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 595,
+              "y": 550
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Load Prescription"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "a3c26214-b1f3-48ce-b317-50d20c8ce692",
+            "zIndex": 10,
+            "data": {
+              "name": "Load Prescription",
+              "description": "Načtení platného předpisu od centrálního systému pro ověřeného pacienta.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "title": "Forged prescription received by dispenser",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "description": "Útočník podvrhne nebo změní předpis při přenosu do dávkovače.",
+                  "mitigation": "Vzájemná autentizace zařízení, TLS, validace integrity a čerstvosti zpráv.",
+                  "id": "ecca9411-e3d1-45f1-b666-fae333006912"
+                }
+              ],
+              "hasOpenThreats": true
+            }
+          },
+          {
+            "position": {
+              "x": 845,
+              "y": 550
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Validate Dose"
+              },
+              "body": {
+                "stroke": "red",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "a69600d2-96a4-4e1a-97e5-786e70f9ec4e",
+            "zIndex": 10,
+            "data": {
+              "name": "Validate Dose",
+              "description": "Ověří správný čas, množství, platnost instrukce a duplicity.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [
+                {
+                  "title": "Duplicate or unsafe medication dose",
+                  "type": "Tampering",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "Critical",
+                  "description": "Opakovaný nebo nesprávný příkaz může způsobit opakované vydání léku.",
+                  "mitigation": "Ověřit čas a dávku, jednorázová ID výdejů, kontrola duplicit, při chybě nevydat léky.",
+                  "id": "b64372e7-a627-4b5c-9f74-b8b0d5839576"
+                }
+              ],
+              "hasOpenThreats": true
+            }
+          },
+          {
+            "position": {
+              "x": 1090,
+              "y": 550
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Dispense Pills"
+              },
+              "body": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "process",
+            "id": "224f160f-e5b8-452d-a3de-5e548b2d6e20",
+            "zIndex": 10,
+            "data": {
+              "name": "Dispense Pills",
+              "description": "Vydání povolené dávky a potvrzení výsledku.",
+              "type": "tm.Process",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false
+            }
+          },
+          {
+            "position": {
+              "x": 1090,
+              "y": 750
+            },
+            "size": {
+              "width": 175,
+              "height": 78
+            },
+            "attrs": {
+              "text": {
+                "text": "Dispensing History"
+              },
+              "topLine": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              },
+              "bottomLine": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "strokeDasharray": null
+              }
+            },
+            "shape": "store",
+            "id": "6341efb6-e641-4a53-9d84-7dcfeb34cf18",
+            "zIndex": 10,
+            "data": {
+              "name": "Dispensing History",
+              "description": "Záznamy o skutečně vydaných dávkách.",
+              "type": "tm.Store",
+              "isTrustBoundary": false,
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "isALog": true,
+              "storesCredentials": false,
+              "isEncrypted": false,
+              "isSigned": false
+            }
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Login / edit request",
+              "description": "Lékař se hlásí a požaduje změnu předpisu.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "b7c22703-a1be-4c34-80b6-d515e9e326b8",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Login / edit request"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "4665ad68-051f-4079-80a9-39e16f8759a4"
+            },
+            "target": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authenticate doctor",
+              "description": "Kontrola přihlašovacích údajů / identity.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal API",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "295b2055-eaa4-4153-9715-bbe50360241a",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Authenticate doctor"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "target": {
+              "cell": "3d772033-a673-45ac-b015-7a21a6633ac3"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Doctor identity",
+              "description": "Předání ověřené identity lékaře.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "6e0a09a6-c5d3-4d4f-af09-1afff199bdc7",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Doctor identity"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "3d772033-a673-45ac-b015-7a21a6633ac3"
+            },
+            "target": {
+              "cell": "87c2d69d-3a7f-48e5-8a22-7c629e968766"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Requested patient",
+              "description": "Pacient, kterého má lékař v úmyslu upravit.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "a3ac1e39-3a4b-4ea2-9a76-dbc608b28450",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Requested patient"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "target": {
+              "cell": "87c2d69d-3a7f-48e5-8a22-7c629e968766"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Check assignment",
+              "description": "Ověření vazby lékaře na pacienta.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "DB protocol",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "8b83053c-61ce-4b6a-9a29-9475ec901592",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Check assignment"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "87c2d69d-3a7f-48e5-8a22-7c629e968766"
+            },
+            "target": {
+              "cell": "2f2e6cd0-270d-480f-a11d-a03dd83ed6da"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Assignment result",
+              "description": "Výsledek autorizace.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "DB protocol",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "7ed9068a-4a28-4dbb-bd64-26d9bfcd43c0",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Assignment result"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "2f2e6cd0-270d-480f-a11d-a03dd83ed6da"
+            },
+            "target": {
+              "cell": "87c2d69d-3a7f-48e5-8a22-7c629e968766"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Authorized change",
+              "description": "Povolená změna jen u přiřazeného pacienta.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "fb648ef1-de6a-4e5b-a475-1c9a1f276c24",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Authorized change"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "87c2d69d-3a7f-48e5-8a22-7c629e968766"
+            },
+            "target": {
+              "cell": "0edd25b5-6637-422d-890c-79e9d92770f8"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Save prescription",
+              "description": "Uložení nového předpisu.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "DB protocol",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "eb69ab0b-c6b3-4f3d-b295-b06dfd603a08",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Save prescription"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "0edd25b5-6637-422d-890c-79e9d92770f8"
+            },
+            "target": {
+              "cell": "2f2e6cd0-270d-480f-a11d-a03dd83ed6da"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Record change",
+              "description": "Nezměnitelný audit kdo/kdy/co.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "DB protocol",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "5f0eff6e-e522-4581-8325-2afa2beea2ca",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Record change"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "0edd25b5-6637-422d-890c-79e9d92770f8"
+            },
+            "target": {
+              "cell": "ceb5c914-e01a-4429-be14-7f6c75ccc6bd"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "PIN / card",
+              "description": "Pacient lokálně zadá PIN nebo načte kartu.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Local UI / NFC",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "04bc14c1-1d06-491a-b092-e5bb1035e034",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "PIN / card"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "5a2b70c1-0e04-4411-b94a-db5fbfdafe83"
+            },
+            "target": {
+              "cell": "c2e056f1-5c03-44ba-b02c-9b2bd544aecb"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Verified patient ID",
+              "description": "Výsledek ověření pacienta.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "dc3b5b5e-4b4d-4388-bb70-973e1239ad65",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Verified patient ID"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "c2e056f1-5c03-44ba-b02c-9b2bd544aecb"
+            },
+            "target": {
+              "cell": "a3c26214-b1f3-48ce-b317-50d20c8ce692"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Request prescription",
+              "description": "Žádost o aktuální schválený předpis.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS API",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "92f4033e-d18a-47d8-b254-166c9dcdf4a6",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Request prescription"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "a3c26214-b1f3-48ce-b317-50d20c8ce692"
+            },
+            "target": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Read current prescription",
+              "description": "Načtení aktuálního předpisu.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "DB protocol",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "70525024-9d67-4c09-baea-9b4da3831f55",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Read current prescription"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "target": {
+              "cell": "2f2e6cd0-270d-480f-a11d-a03dd83ed6da"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Prescription response",
+              "description": "Aktuální předpis pro dávkovač.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS API",
+              "isEncrypted": true,
+              "isPublicNetwork": true,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "66020248-f1cc-4da9-abe9-44c019a440d9",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Prescription response"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "f37fb4bb-427b-40d0-9447-bcd4dbbd3844"
+            },
+            "target": {
+              "cell": "a3c26214-b1f3-48ce-b317-50d20c8ce692"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Prescription / schedule",
+              "description": "Údaje o léku, dávce a čase.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "fbba4c7f-e03b-46c4-ae8e-2988fdfaf662",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Prescription / schedule"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "a3c26214-b1f3-48ce-b317-50d20c8ce692"
+            },
+            "target": {
+              "cell": "a69600d2-96a4-4e1a-97e5-786e70f9ec4e"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Dispense authorization",
+              "description": "Příkaz k výdeji jen po bezpečnostní kontrole.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "f73251dc-9a1e-48cb-beb8-9b73da8462e6",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Dispense authorization"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "a69600d2-96a4-4e1a-97e5-786e70f9ec4e"
+            },
+            "target": {
+              "cell": "224f160f-e5b8-452d-a3de-5e548b2d6e20"
+            },
+            "vertices": []
+          },
+          {
+            "shape": "flow",
+            "attrs": {
+              "line": {
+                "stroke": "#333333",
+                "strokeWidth": 1,
+                "targetMarker": {
+                  "name": "block"
+                },
+                "strokeDasharray": null
+              }
+            },
+            "width": 200,
+            "height": 100,
+            "zIndex": 12,
+            "connector": "smooth",
+            "data": {
+              "type": "tm.Flow",
+              "name": "Record dispensed dose",
+              "description": "Záznam výsledku výdeje.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "hasOpenThreats": false,
+              "threats": [],
+              "isTrustBoundary": false
+            },
+            "id": "d251576a-5f78-444e-8573-092e614639c1",
+            "labels": [
+              {
+                "position": 0.5,
+                "attrs": {
+                  "label": {
+                    "text": "Record dispensed dose"
+                  }
+                }
+              }
+            ],
+            "source": {
+              "cell": "224f160f-e5b8-452d-a3de-5e548b2d6e20"
+            },
+            "target": {
+              "cell": "6341efb6-e641-4a53-9d84-7dcfeb34cf18"
+            },
+            "vertices": []
+          }
+        ],
+        "version": "2.0",
+        "title": "Medication Dispensing Data Flow",
+        "description": "Central administration and physical dispensing device, with authorization and auditable prescription changes.",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
-        "version": "2.6.2",
-        "cells": []
+        "diagramType": "STRIDE",
+        "id": 0
       }
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
-  }
+    "threatTop": 5
+  },
+  "version": "2.0"
 }

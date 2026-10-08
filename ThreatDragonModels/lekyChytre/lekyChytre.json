@@ -1,0 +1,31 @@
+{
+  "version": "2.6.2",
+  "release_version": "1",
+  "released_at": "",
+  "summary": {
+    "title": "lekyChytre",
+    "owner": "us",
+    "description": "none",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [
+      {
+        "name": "me"
+      },
+      {
+        "name": "he"
+      },
+      {
+        "name": "he2"
+      },
+      {
+        "name": "he3"
+      }
+    ],
+    "diagrams": [],
+    "diagramTop": 1,
+    "reviewer": "us",
+    "threatTop": 0
+  }
+}

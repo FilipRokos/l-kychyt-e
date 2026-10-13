@@ -10,248 +10,123 @@
     "contributors": [],
     "diagrams": [
       {
-        "title": "Medication Dispensing - Complete System",
-        "description": "Central system and dispenser trust boundaries, users, staff authentication, patient assignment approval, prescriptions, audit trail and dispensing.",
+        "title": "01 - Central System and Doctor Permissions",
+        "description": "Medication dispenser cybersecurity data-flow model. Links between the two diagrams: Central API and Dispenser Software communicate using authenticated and protected requests.",
         "thumbnail": "./public/content/images/thumbnail.stride.jpg",
         "diagramType": "STRIDE",
         "id": 0,
-        "version": "2.0",
-        "cells": [
-          {
-            "shape": "trust-boundary-curve",
-            "attrs": {
-              "line": {
-                "targetMarker": "",
-                "sourceMarker": ""
-              }
-            },
-            "width": 1490,
-            "height": 760,
-            "zIndex": 0,
-            "connector": "normal",
-            "labels": [
-              {
-                "position": 0.2,
-                "attrs": {
-                  "text": {
-                    "text": "Trust Boundary 1 - Central System"
-                  }
-                }
-              }
-            ],
-            "data": {
+        "diagramJson": {
+          "cells": [
+            {
               "type": "tm.Boundary",
-              "name": "Trust Boundary 1 - Central System",
-              "description": "Trust boundary separating Trust Boundary 1 - Central System from actors and other systems.",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
-            },
-            "id": "8869d365-3fa1-46ef-bddd-4744d789634e",
-            "source": {
-              "x": 340,
-              "y": 25
-            },
-            "target": {
-              "x": 340,
-              "y": 25
-            },
-            "vertices": [
-              {
-                "x": 1830,
-                "y": 25
+              "size": {
+                "width": 10,
+                "height": 10
               },
-              {
-                "x": 1830,
-                "y": 785
+              "smooth": false,
+              "source": {
+                "x": 350,
+                "y": 40
               },
-              {
-                "x": 340,
-                "y": 785
-              }
-            ]
-          },
-          {
-            "shape": "trust-boundary-curve",
-            "attrs": {
-              "line": {
-                "targetMarker": "",
-                "sourceMarker": ""
-              }
-            },
-            "width": 1490,
-            "height": 430,
-            "zIndex": 0,
-            "connector": "normal",
-            "labels": [
-              {
-                "position": 0.2,
-                "attrs": {
-                  "text": {
-                    "text": "Trust Boundary 2 - Dispenser Software"
-                  }
+              "target": {
+                "x": 350,
+                "y": 40.1
+              },
+              "vertices": [
+                {
+                  "x": 2045,
+                  "y": 40
+                },
+                {
+                  "x": 2045,
+                  "y": 1195
+                },
+                {
+                  "x": 350,
+                  "y": 1195
                 }
-              }
-            ],
-            "data": {
-              "type": "tm.Boundary",
-              "name": "Trust Boundary 2 - Dispenser Software",
-              "description": "Trust boundary separating Trust Boundary 2 - Dispenser Software from actors and other systems.",
-              "isTrustBoundary": true,
-              "hasOpenThreats": false
+              ],
+              "id": "8cf274fd-ec78-49a4-93d5-a26f6549eeea",
+              "z": 0,
+              "attrs": {},
+              "name": "Trust Boundary – Central System"
             },
-            "id": "48f5b44f-cfe4-433d-9615-5b97996e1713",
-            "source": {
-              "x": 340,
-              "y": 845
-            },
-            "target": {
-              "x": 340,
-              "y": 845
-            },
-            "vertices": [
-              {
-                "x": 1830,
-                "y": 845
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 250,
+                "height": 90
               },
-              {
-                "x": 1830,
-                "y": 1275
+              "position": {
+                "x": 60,
+                "y": 145
               },
-              {
-                "x": 340,
-                "y": 1275
-              }
-            ]
-          },
-          {
-            "position": {
-              "x": 30,
-              "y": 155
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Doctor / Healthcare Professional"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
-            },
-            "shape": "actor",
-            "id": "b2a06f50-ae5d-4e6e-b389-52d18f048f69",
-            "zIndex": 10,
-            "data": {
-              "name": "Doctor / Healthcare Professional",
+              "angle": 0,
+              "id": "b2a06f50-ae5d-4e6e-b389-52d18f048f69",
+              "z": 2,
               "description": "Healthcare professional requests assignment and prescription changes.",
-              "type": "tm.Actor",
-              "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
-              "providesAuthentication": false
-            }
-          },
-          {
-            "position": {
-              "x": 30,
-              "y": 395
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Hospital Administrator"
+              "attrs": {
+                "text": {
+                  "text": "Doctor / Healthcare Professional"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
+              "providesAuthentication": false
             },
-            "shape": "actor",
-            "id": "b21aa559-40e9-445b-bcfd-5026eb50fcb8",
-            "zIndex": 10,
-            "data": {
-              "name": "Hospital Administrator",
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 60,
+                "y": 510
+              },
+              "angle": 0,
+              "id": "b21aa559-40e9-445b-bcfd-5026eb50fcb8",
+              "z": 3,
               "description": "Authorized independent approver of doctor-patient assignments.",
-              "type": "tm.Actor",
-              "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
-              "providesAuthentication": false
-            }
-          },
-          {
-            "position": {
-              "x": 30,
-              "y": 980
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Patient / Senior"
+              "attrs": {
+                "text": {
+                  "text": "Hospital Administrator"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
-            },
-            "shape": "actor",
-            "id": "e9b8b86c-a77e-47f3-af25-3361cc6f35d4",
-            "zIndex": 10,
-            "data": {
-              "name": "Patient / Senior",
-              "description": "Patient identifies at the dispenser and requests a scheduled dose.",
-              "type": "tm.Actor",
-              "isTrustBoundary": false,
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "threats": [],
-              "hasOpenThreats": false,
               "providesAuthentication": false
-            }
-          },
-          {
-            "position": {
-              "x": 400,
-              "y": 110
             },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Authenticate Staff"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
-            },
-            "shape": "process",
-            "id": "a7224070-80bd-45b6-85a2-40526212150a",
-            "zIndex": 10,
-            "data": {
-              "name": "Authenticate Staff",
-              "description": "Verifies clinician and administrator credentials against user accounts. Issues authenticated session after successful login.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 405,
+                "y": 110
+              },
+              "angle": 0,
+              "id": "a7224070-80bd-45b6-85a2-40526212150a",
+              "z": 4,
+              "description": "Verifies clinician and administrator credentials against user accounts. Issues authenticated session after successful login.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -267,36 +142,32 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 700,
-              "y": 110
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Central System / API"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Authenticate Staff"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a",
-            "zIndex": 10,
-            "data": {
-              "name": "Central System / API",
-              "description": "Verifies each session token, obtains trustworthy user identity and routes authorized requests.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 795,
+                "y": 230
+              },
+              "angle": 0,
+              "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a",
+              "z": 5,
+              "description": "Verifies each session token, obtains trustworthy user identity and routes authorized requests.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -312,36 +183,32 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1010,
-              "y": 110
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Check Doctor Permissions"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Central System / API"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb",
-            "zIndex": 10,
-            "data": {
-              "name": "Check Doctor Permissions",
-              "description": "Checks authenticated doctor-patient assignment and allowed action for each prescription modification.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1160,
+                "y": 100
+              },
+              "angle": 0,
+              "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb",
+              "z": 6,
+              "description": "Checks authenticated doctor-patient assignment and allowed action for each prescription modification.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -357,36 +224,32 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1310,
-              "y": 110
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Update Prescription"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Check Doctor Permissions"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79",
-            "zIndex": 10,
-            "data": {
-              "name": "Update Prescription",
-              "description": "Applies change only with authorization matching doctor, patient and operation; checks medication data.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1500,
+                "y": 95
+              },
+              "angle": 0,
+              "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79",
+              "z": 7,
+              "description": "Applies change only with authorization matching doctor, patient and operation; checks medication data.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -402,70 +265,62 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 700,
-              "y": 355
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Request Doctor Assignment"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Update Prescription"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "1c8f5235-72f4-46a0-a364-89ffa68fe475",
-            "zIndex": 10,
-            "data": {
-              "name": "Request Doctor Assignment",
-              "description": "Records a pending request to become responsible for a specific patient; does not confer prescribing access.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1150,
+                "y": 575
+              },
+              "angle": 0,
+              "id": "1c8f5235-72f4-46a0-a364-89ffa68fe475",
+              "z": 8,
+              "description": "Records a pending request to become responsible for a specific patient; does not confer prescribing access.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1010,
-              "y": 355
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Approve Doctor Assignment"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Request Doctor Assignment"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058",
-            "zIndex": 10,
-            "data": {
-              "name": "Approve Doctor Assignment",
-              "description": "Verifies independent administrator role and approval; blocks self-approval before activating assignment.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1490,
+                "y": 590
+              },
+              "angle": 0,
+              "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058",
+              "z": 9,
+              "description": "Verifies independent administrator role and approval; blocks self-approval before activating assignment.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -481,83 +336,66 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1320,
-              "y": 355
-            },
-            "size": {
-              "width": 190,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "User Database"
-              },
-              "topLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              },
-              "bottomLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Approve Doctor Assignment"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "store",
-            "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1",
-            "zIndex": 10,
-            "data": {
-              "name": "User Database",
-              "description": "Stores doctors, patients, accounts/credential hashes, doctor-patient assignments, pending requests, prescriptions and schedules.",
+            {
               "type": "tm.Store",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1250,
+                "y": 1000
+              },
+              "angle": 0,
+              "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1",
+              "z": 10,
+              "description": "Stores doctors, patients, accounts/credential hashes, doctor-patient assignments, pending requests, prescriptions and schedules.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
+              "attrs": {
+                "text": {
+                  "text": "User Database"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              },
               "isALog": false,
               "storesCredentials": true,
               "isEncrypted": false,
               "isSigned": false
-            }
-          },
-          {
-            "position": {
-              "x": 1320,
-              "y": 580
             },
-            "size": {
-              "width": 190,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Audit Log"
-              },
-              "topLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              },
-              "bottomLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              }
-            },
-            "shape": "store",
-            "id": "e55e4cff-327a-4fdb-8f38-e7523736080f",
-            "zIndex": 10,
-            "data": {
-              "name": "Audit Log",
-              "description": "Records authentication, rejected access, prescription edits, assignment requests/approvals and dispensing events.",
+            {
               "type": "tm.Store",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1730,
+                "y": 1000
+              },
+              "angle": 0,
+              "id": "e55e4cff-327a-4fdb-8f38-e7523736080f",
+              "z": 11,
+              "description": "Records authentication, rejected access, prescription edits, assignment requests/approvals and dispensing events.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -573,107 +411,1329 @@
                 }
               ],
               "hasOpenThreats": true,
+              "attrs": {
+                "text": {
+                  "text": "Audit Log"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              },
               "isALog": true,
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false
-            }
-          },
-          {
-            "position": {
-              "x": 425,
-              "y": 930
             },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Patient Authentication"
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
               },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "smooth": false,
+              "source": {
+                "id": "b2a06f50-ae5d-4e6e-b389-52d18f048f69"
+              },
+              "target": {
+                "id": "a7224070-80bd-45b6-85a2-40526212150a"
+              },
+              "vertices": [],
+              "id": "6c335448-f86f-4afc-8687-6db03779f22a",
+              "z": 12,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Login",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Doctor submits credentials to staff authentication.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "f1b21363-6f07-416f-8739-4d1b3bcf7554",
-            "zIndex": 10,
-            "data": {
-              "name": "Patient Authentication",
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "b21aa559-40e9-445b-bcfd-5026eb50fcb8"
+              },
+              "target": {
+                "id": "a7224070-80bd-45b6-85a2-40526212150a"
+              },
+              "vertices": [],
+              "id": "71e3f7fe-aeaa-4f7c-8754-f03f5d44a932",
+              "z": 13,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Login",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Independent hospital administrator signs in.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "a7224070-80bd-45b6-85a2-40526212150a"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "661d36df-2f7d-49b5-ba5c-5d120e538e6b",
+              "z": 14,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Check credentials",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Verify account and credentials (response returns verification result).",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "target": {
+                "id": "a7224070-80bd-45b6-85a2-40526212150a"
+              },
+              "vertices": [],
+              "id": "7a3b70be-fadb-48c9-9771-e4b6d862dcb8",
+              "z": 15,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Verified account",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Account verification result",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "a7224070-80bd-45b6-85a2-40526212150a"
+              },
+              "target": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "vertices": [],
+              "id": "2a1cb931-9f07-4730-b58e-51fe8021defe",
+              "z": 16,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Session",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Valid identity and protected session created after login.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "b2a06f50-ae5d-4e6e-b389-52d18f048f69"
+              },
+              "target": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "vertices": [],
+              "id": "5c07a021-c217-4326-8d27-7f72a8b4c9e1",
+              "z": 17,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Request + token",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Protected request carries session token and patient ID.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [
+                {
+                  "title": "Session hijacking",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "An attacker reuses a stolen staff token.",
+                  "mitigation": "Use HTTPS, short-lived tokens, secure cookie flags, session revocation and MFA.",
+                  "threatId": "edf02543-b8a1-410f-9476-ea19a147aa41"
+                }
+              ],
+              "hasOpenThreats": true,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "b21aa559-40e9-445b-bcfd-5026eb50fcb8"
+              },
+              "target": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "vertices": [],
+              "id": "1efc9b9e-92fa-461e-b8e4-7f9790a42ded",
+              "z": 18,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Approval + token",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Admin submits approval with verified authenticated session.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
+              },
+              "vertices": [],
+              "id": "ca45c17c-0303-46dd-944c-6624b6e0d9d4",
+              "z": 19,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Doctor + patient + action",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Server-derived doctor identity and requested change: never trust a client-supplied Doctor ID.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "9e1226fa-e719-40a8-a014-b87e9159234b",
+              "z": 20,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Check assignment",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Check doctor-patient assignment",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "target": {
+                "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
+              },
+              "vertices": [],
+              "id": "ef8563b8-788a-49b4-8f64-b3f74a56439a",
+              "z": 21,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Assignment result",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Doctor assignment result",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
+              },
+              "target": {
+                "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
+              },
+              "vertices": [],
+              "id": "08cd0de3-98ad-44a5-9f44-42de89bcc0b2",
+              "z": 22,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Allow / deny",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Authorization result bound to doctor, patient, operation and current request.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
+              },
+              "vertices": [],
+              "id": "ec085551-850d-42e9-9d9f-2d23a8aecae4",
+              "z": 23,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Change details",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "The payload is not sufficient to authorize a change without permission check.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "5923685d-0f55-493d-936b-598e1af7a84b",
+              "z": 24,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Save prescription",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Save authorized prescription",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
+              },
+              "target": {
+                "id": "e55e4cff-327a-4fdb-8f38-e7523736080f"
+              },
+              "vertices": [],
+              "id": "4fdf8e90-fde7-4b19-98d9-af46d8a6a891",
+              "z": 25,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Change record",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Prescription change record",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "1c8f5235-72f4-46a0-a364-89ffa68fe475"
+              },
+              "vertices": [],
+              "id": "0314a72f-d2ca-451c-935f-0e166c6ffbd2",
+              "z": 26,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Assignment request",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Authenticated assignment request",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "1c8f5235-72f4-46a0-a364-89ffa68fe475"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "4a7b9cd7-39ec-41bc-a49c-1ef5410c3e2d",
+              "z": 27,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Pending request",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Save pending assignment",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
+              },
+              "vertices": [],
+              "id": "4ce94309-6643-4b29-9976-d661594b257f",
+              "z": 28,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Verified approval",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "API checks admin session; approval process separately verifies role and no self-approval.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "30c7e051-c449-48e0-8c35-4b3c2c579aa4",
+              "z": 29,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Verify role / request",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Verify admin role and pending request",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "target": {
+                "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
+              },
+              "vertices": [],
+              "id": "0026a374-7492-46cf-af5e-c22b76f1a813",
+              "z": 30,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Role / request data",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Role and request details",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
+              },
+              "target": {
+                "id": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
+              },
+              "vertices": [],
+              "id": "5fa0b3b6-6f00-4283-a511-a90d7dbff704",
+              "z": 31,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Save approval",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Activate approved assignment",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
+              },
+              "target": {
+                "id": "e55e4cff-327a-4fdb-8f38-e7523736080f"
+              },
+              "vertices": [],
+              "id": "54e7346e-7ebc-4a88-85d8-e3923253c7bf",
+              "z": 32,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Assignment log",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Assignment decision record",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "e55e4cff-327a-4fdb-8f38-e7523736080f"
+              },
+              "vertices": [],
+              "id": "758bfd13-4e80-45c3-94d0-1c133e31b155",
+              "z": 33,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Access log",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Authentication and access events",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 215,
+                "height": 73
+              },
+              "position": {
+                "x": 60,
+                "y": 865
+              },
+              "angle": 0,
+              "id": "3d24d8db-d9ae-4744-b282-9e101160f965",
+              "z": 5,
+              "description": "Dispenser software, shown in diagram 02.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                "text": {
+                  "text": "External Dispenser"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              },
+              "providesAuthentication": false
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "3d24d8db-d9ae-4744-b282-9e101160f965"
+              },
+              "target": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "vertices": [],
+              "id": "663950c8-1065-4fd7-8867-30f6a9a9e5dc",
+              "z": 43,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Retrieve prescription",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Device authenticates to central service and retrieves data for verified patient.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [
+                {
+                  "title": "Forged dispenser identity",
+                  "type": "Spoofing",
+                  "modelType": "STRIDE",
+                  "status": "Open",
+                  "severity": "High",
+                  "description": "A rogue device requests patients prescriptions.",
+                  "mitigation": "Mutual device authentication, per-device credentials, access control and rotation.",
+                  "threatId": "9e95a465-2da0-47ce-95f7-bac244a973ec"
+                }
+              ],
+              "hasOpenThreats": true,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "target": {
+                "id": "3d24d8db-d9ae-4744-b282-9e101160f965"
+              },
+              "vertices": [],
+              "id": "c04b2d83-367e-4d5f-ba01-0eddeaaedba7",
+              "z": 44,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Prescription data",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Current patient medication schedule delivered over authenticated secure channel.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "3d24d8db-d9ae-4744-b282-9e101160f965"
+              },
+              "target": {
+                "id": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
+              },
+              "vertices": [],
+              "id": "a61eac91-fd0e-4919-a3a4-1dacba973c08",
+              "z": 48,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Dispensing event",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Report dispensing success/failure, ID and timestamp.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "HTTPS",
+              "isEncrypted": false,
+              "isPublicNetwork": true,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            }
+          ]
+        },
+        "size": {
+          "width": 2110,
+          "height": 1250
+        }
+      },
+      {
+        "title": "02 - Dispenser and Patient Safety",
+        "description": "Medication dispenser cybersecurity data-flow model. Links between the two diagrams: Central API and Dispenser Software communicate using authenticated and protected requests.",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "diagramType": "STRIDE",
+        "id": 1,
+        "diagramJson": {
+          "cells": [
+            {
+              "type": "tm.Boundary",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "x": 345,
+                "y": 155
+              },
+              "target": {
+                "x": 345,
+                "y": 155.1
+              },
+              "vertices": [
+                {
+                  "x": 1990,
+                  "y": 155
+                },
+                {
+                  "x": 1990,
+                  "y": 710
+                },
+                {
+                  "x": 345,
+                  "y": 710
+                }
+              ],
+              "id": "7122ecc6-0664-4103-9d5d-5e2dfa060853",
+              "z": 0,
+              "attrs": {},
+              "name": "Trust Boundary – Dispenser Software"
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 55,
+                "y": 255
+              },
+              "angle": 0,
+              "id": "e9b8b86c-a77e-47f3-af25-3361cc6f35d4",
+              "z": 2,
+              "description": "Patient identifies at the dispenser and requests a scheduled dose.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                "text": {
+                  "text": "Patient / Senior"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              },
+              "providesAuthentication": false
+            },
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 395,
+                "y": 255
+              },
+              "angle": 0,
+              "id": "f1b21363-6f07-416f-8739-4d1b3bcf7554",
+              "z": 3,
               "description": "Verifies the patient identity through card/PIN and maps it to a patient record.",
-              "type": "tm.Process",
-              "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 725,
-              "y": 930
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Load Prescription"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Patient Authentication"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "4cd430bb-de28-4c80-a201-c272dfe604b0",
-            "zIndex": 10,
-            "data": {
-              "name": "Load Prescription",
+            {
+              "type": "tm.Process",
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 735,
+                "y": 255
+              },
+              "angle": 0,
+              "id": "4cd430bb-de28-4c80-a201-c272dfe604b0",
+              "z": 4,
               "description": "Retrieves current patient medication schedule only after server-side patient access checks.",
-              "type": "tm.Process",
-              "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1025,
-              "y": 930
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Validate Dose and Schedule"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Load Prescription"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "25886d4d-4788-4c1d-9f48-661503fb1ef8",
-            "zIndex": 10,
-            "data": {
-              "name": "Validate Dose and Schedule",
-              "description": "Checks right patient, medication, amount, time, duplicate dispensing and safe device state before granting dispense permission.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1105,
+                "y": 255
+              },
+              "angle": 0,
+              "id": "25886d4d-4788-4c1d-9f48-661503fb1ef8",
+              "z": 5,
+              "description": "Checks right patient, medication, amount, time, duplicate dispensing and safe device state before granting dispense permission.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -689,36 +1749,32 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1330,
-              "y": 930
-            },
-            "size": {
-              "width": 215,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Dispense Medication"
-              },
-              "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Validate Dose and Schedule"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "process",
-            "id": "626b5245-1843-40f7-8023-c6fd15e80ea7",
-            "zIndex": 10,
-            "data": {
-              "name": "Dispense Medication",
-              "description": "Activates hardware only on a valid approved dose and reports result; does not dispense on communication or validation failures.",
+            {
               "type": "tm.Process",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1450,
+                "y": 255
+              },
+              "angle": 0,
+              "id": "626b5245-1843-40f7-8023-c6fd15e80ea7",
+              "z": 6,
+              "description": "Activates hardware only on a valid approved dose and reports result; does not dispense on communication or validation failures.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [
@@ -734,1240 +1790,335 @@
                 }
               ],
               "hasOpenThreats": true,
-              "isWebApplication": true
-            }
-          },
-          {
-            "position": {
-              "x": 1320,
-              "y": 1150
-            },
-            "size": {
-              "width": 190,
-              "height": 73
-            },
-            "attrs": {
-              "text": {
-                "text": "Local Dispensing Records"
-              },
-              "topLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
-              },
-              "bottomLine": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "strokeDasharray": null
+              "attrs": {
+                "text": {
+                  "text": "Dispense Medication"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
               }
             },
-            "shape": "store",
-            "id": "3e1fc8db-7340-4334-b2ec-e716d3ac9977",
-            "zIndex": 10,
-            "data": {
-              "name": "Local Dispensing Records",
-              "description": "Local queue of completed/failed dispense events awaiting synchronization.",
+            {
               "type": "tm.Store",
-              "isTrustBoundary": false,
+              "size": {
+                "width": 250,
+                "height": 90
+              },
+              "position": {
+                "x": 1730,
+                "y": 510
+              },
+              "angle": 0,
+              "id": "3e1fc8db-7340-4334-b2ec-e716d3ac9977",
+              "z": 7,
+              "description": "Local queue of completed/failed dispense events awaiting synchronization.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "threats": [],
               "hasOpenThreats": false,
+              "attrs": {
+                "text": {
+                  "text": "Local Dispensing Records"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              },
               "isALog": true,
               "storesCredentials": false,
               "isEncrypted": false,
               "isSigned": false
-            }
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
             },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
+            {
               "type": "tm.Flow",
-              "name": "Doctor login credentials",
-              "description": "Doctor submits credentials to staff authentication.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "HTTPS",
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "6c335448-f86f-4afc-8687-6db03779f22a",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Doctor login credentials"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "b2a06f50-ae5d-4e6e-b389-52d18f048f69"
-            },
-            "target": {
-              "cell": "a7224070-80bd-45b6-85a2-40526212150a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Admin login credentials",
-              "description": "Independent hospital administrator signs in.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "HTTPS",
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "71e3f7fe-aeaa-4f7c-8754-f03f5d44a932",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Admin login credentials"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "b21aa559-40e9-445b-bcfd-5026eb50fcb8"
-            },
-            "target": {
-              "cell": "a7224070-80bd-45b6-85a2-40526212150a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Verify staff credentials",
-              "description": "Verify account and credentials (response returns verification result).",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "661d36df-2f7d-49b5-ba5c-5d120e538e6b",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Verify staff credentials"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a7224070-80bd-45b6-85a2-40526212150a"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Account verification result",
-              "description": "Account verification result",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "7a3b70be-fadb-48c9-9771-e4b6d862dcb8",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Account verification result"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "target": {
-              "cell": "a7224070-80bd-45b6-85a2-40526212150a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authenticated session",
-              "description": "Valid identity and protected session created after login.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "2a1cb931-9f07-4730-b58e-51fe8021defe",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Authenticated session"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a7224070-80bd-45b6-85a2-40526212150a"
-            },
-            "target": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Prescription/assignment request + token",
-              "description": "Protected request carries session token and patient ID.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "HTTPS",
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "hasOpenThreats": true,
-              "threats": [
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "e9b8b86c-a77e-47f3-af25-3361cc6f35d4"
+              },
+              "target": {
+                "id": "f1b21363-6f07-416f-8739-4d1b3bcf7554"
+              },
+              "vertices": [],
+              "id": "4e22b743-509f-40d9-af11-1611c77d8a01",
+              "z": 8,
+              "labels": [
                 {
-                  "title": "Session hijacking",
-                  "type": "Spoofing",
-                  "modelType": "STRIDE",
-                  "status": "Open",
-                  "severity": "High",
-                  "description": "An attacker reuses a stolen staff token.",
-                  "mitigation": "Use HTTPS, short-lived tokens, secure cookie flags, session revocation and MFA.",
-                  "threatId": "edf02543-b8a1-410f-9476-ea19a147aa41"
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "PIN / card",
+                      "font-size": "small"
+                    }
+                  }
                 }
               ],
-              "isTrustBoundary": false
-            },
-            "id": "5c07a021-c217-4326-8d27-7f72a8b4c9e1",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Prescription/assignment request + token"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "b2a06f50-ae5d-4e6e-b389-52d18f048f69"
-            },
-            "target": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Approval request + session token",
-              "description": "Admin submits approval with verified authenticated session.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "HTTPS",
-              "isEncrypted": false,
-              "isPublicNetwork": true,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "1efc9b9e-92fa-461e-b8e4-7f9790a42ded",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Approval request + session token"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "b21aa559-40e9-445b-bcfd-5026eb50fcb8"
-            },
-            "target": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Verified Doctor ID + Patient ID + action",
-              "description": "Server-derived doctor identity and requested change: never trust a client-supplied Doctor ID.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "ca45c17c-0303-46dd-944c-6624b6e0d9d4",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Verified Doctor ID + Patient ID + action"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "target": {
-              "cell": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Check doctor-patient assignment",
-              "description": "Check doctor-patient assignment",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "9e1226fa-e719-40a8-a014-b87e9159234b",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Check doctor-patient assignment"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Doctor assignment result",
-              "description": "Doctor assignment result",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "ef8563b8-788a-49b4-8f64-b3f74a56439a",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Doctor assignment result"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "target": {
-              "cell": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authorized action decision",
-              "description": "Authorization result bound to doctor, patient, operation and current request.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "08cd0de3-98ad-44a5-9f44-42de89bcc0b2",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Authorized action decision"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "2bf045d3-78f0-4260-92fa-4fa542c246fb"
-            },
-            "target": {
-              "cell": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Requested prescription changes",
-              "description": "The payload is not sufficient to authorize a change without permission check.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "ec085551-850d-42e9-9d9f-2d23a8aecae4",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Requested prescription changes"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "target": {
-              "cell": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Save authorized prescription",
-              "description": "Save authorized prescription",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "5923685d-0f55-493d-936b-598e1af7a84b",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Save authorized prescription"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Prescription change record",
-              "description": "Prescription change record",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "4fdf8e90-fde7-4b19-98d9-af46d8a6a891",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Prescription change record"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "abbf3ad8-f77d-410c-9d18-ee1c1d992e79"
-            },
-            "target": {
-              "cell": "e55e4cff-327a-4fdb-8f38-e7523736080f"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authenticated assignment request",
-              "description": "Authenticated assignment request",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "0314a72f-d2ca-451c-935f-0e166c6ffbd2",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Authenticated assignment request"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "target": {
-              "cell": "1c8f5235-72f4-46a0-a364-89ffa68fe475"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Save pending assignment",
-              "description": "Save pending assignment",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "4a7b9cd7-39ec-41bc-a49c-1ef5410c3e2d",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Save pending assignment"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "1c8f5235-72f4-46a0-a364-89ffa68fe475"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Verified admin approval command",
-              "description": "API checks admin session; approval process separately verifies role and no self-approval.",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "4ce94309-6643-4b29-9976-d661594b257f",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Verified admin approval command"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "target": {
-              "cell": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Verify admin role and pending request",
-              "description": "Verify admin role and pending request",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "30c7e051-c449-48e0-8c35-4b3c2c579aa4",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Verify admin role and pending request"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Role and request details",
-              "description": "Role and request details",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "0026a374-7492-46cf-af5e-c22b76f1a813",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Role and request details"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "target": {
-              "cell": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Activate approved assignment",
-              "description": "Activate approved assignment",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "5fa0b3b6-6f00-4283-a511-a90d7dbff704",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Activate approved assignment"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
-            },
-            "target": {
-              "cell": "a3c57eeb-b591-4f83-9f6b-c4d6ad3e8ff1"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Assignment decision record",
-              "description": "Assignment decision record",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "54e7346e-7ebc-4a88-85d8-e3923253c7bf",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Assignment decision record"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "dedb51ad-347d-40fc-b1bf-7f34eeaff058"
-            },
-            "target": {
-              "cell": "e55e4cff-327a-4fdb-8f38-e7523736080f"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Authentication and access events",
-              "description": "Authentication and access events",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "758bfd13-4e80-45c3-94d0-1c133e31b155",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Authentication and access events"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "target": {
-              "cell": "e55e4cff-327a-4fdb-8f38-e7523736080f"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "PIN / patient card",
               "description": "Local patient interaction with medication dispenser.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "protocol": "Internal / local",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": false,
               "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "4e22b743-509f-40d9-af11-1611c77d8a01",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "PIN / patient card"
-                  }
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 }
               }
-            ],
-            "source": {
-              "cell": "e9b8b86c-a77e-47f3-af25-3361cc6f35d4"
             },
-            "target": {
-              "cell": "f1b21363-6f07-416f-8739-4d1b3bcf7554"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
+            {
               "type": "tm.Flow",
-              "name": "Verified patient identity",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "f1b21363-6f07-416f-8739-4d1b3bcf7554"
+              },
+              "target": {
+                "id": "4cd430bb-de28-4c80-a201-c272dfe604b0"
+              },
+              "vertices": [],
+              "id": "f80d1d55-7e68-47ec-8098-a93893af8a87",
+              "z": 9,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Patient ID",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
               "description": "Verified patient identity",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "protocol": "Internal / local",
               "isEncrypted": false,
               "isPublicNetwork": false,
-              "hasOpenThreats": false,
               "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "f80d1d55-7e68-47ec-8098-a93893af8a87",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Verified patient identity"
-                  }
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 }
               }
-            ],
-            "source": {
-              "cell": "f1b21363-6f07-416f-8739-4d1b3bcf7554"
             },
-            "target": {
-              "cell": "4cd430bb-de28-4c80-a201-c272dfe604b0"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "4cd430bb-de28-4c80-a201-c272dfe604b0"
+              },
+              "target": {
+                "id": "25886d4d-4788-4c1d-9f48-661503fb1ef8"
+              },
+              "vertices": [],
+              "id": "3b4ad526-de61-421f-ac78-2c43510ea27b",
+              "z": 10,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Prescription",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Prescription dosage and schedule",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
                 },
-                "strokeDasharray": null
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
               }
             },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
+            {
               "type": "tm.Flow",
-              "name": "Prescription retrieval + machine identity",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "25886d4d-4788-4c1d-9f48-661503fb1ef8"
+              },
+              "target": {
+                "id": "626b5245-1843-40f7-8023-c6fd15e80ea7"
+              },
+              "vertices": [],
+              "id": "16b8903b-d075-444d-8426-45b7dedb0204",
+              "z": 11,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Approved dose",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Approved single dose",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "626b5245-1843-40f7-8023-c6fd15e80ea7"
+              },
+              "target": {
+                "id": "3e1fc8db-7340-4334-b2ec-e716d3ac9977"
+              },
+              "vertices": [],
+              "id": "f7443b70-bb02-4b63-a8a4-73cd4e591539",
+              "z": 12,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Dispense event",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
+              "description": "Dispense result event",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "protocol": "Internal / local",
+              "isEncrypted": false,
+              "isPublicNetwork": false,
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Actor",
+              "size": {
+                "width": 250,
+                "height": 80
+              },
+              "position": {
+                "x": 735,
+                "y": 40
+              },
+              "angle": 0,
+              "id": "713b09cd-8db3-412e-affe-6fa1e1680ed8",
+              "z": 7,
+              "description": "External central API shown only as the dispenser communication endpoint; full details on central-system diagram.",
+              "outOfScope": false,
+              "reasonOutOfScope": "",
+              "threats": [],
+              "hasOpenThreats": false,
+              "attrs": {
+                "text": {
+                  "text": "External Central API"
+                },
+                ".element-shape": {
+                  "class": "element-shape hasNoOpenThreats isInScope"
+                },
+                ".element-text": {
+                  "class": "element-text hasNoOpenThreats isInScope"
+                }
+              }
+            },
+            {
+              "type": "tm.Flow",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "4cd430bb-de28-4c80-a201-c272dfe604b0"
+              },
+              "target": {
+                "id": "713b09cd-8db3-412e-affe-6fa1e1680ed8"
+              },
+              "vertices": [],
+              "id": "f448cc49-2fc4-47ff-873c-e53c2aa24b62",
+              "z": 43,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Retrieve prescription",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
               "description": "Device authenticates to central service and retrieves data for verified patient.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "protocol": "HTTPS",
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "hasOpenThreats": true,
               "threats": [
                 {
                   "title": "Forged dispenser identity",
@@ -1980,271 +2131,109 @@
                   "threatId": "9e95a465-2da0-47ce-95f7-bac244a973ec"
                 }
               ],
-              "isTrustBoundary": false
-            },
-            "id": "ed410636-a2b2-4c7f-ac9f-551d1329c4c2",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Prescription retrieval + machine identity"
-                  }
+              "hasOpenThreats": true,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 }
               }
-            ],
-            "source": {
-              "cell": "4cd430bb-de28-4c80-a201-c272dfe604b0"
             },
-            "target": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
+            {
               "type": "tm.Flow",
-              "name": "Current authorized prescription",
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "713b09cd-8db3-412e-affe-6fa1e1680ed8"
+              },
+              "target": {
+                "id": "4cd430bb-de28-4c80-a201-c272dfe604b0"
+              },
+              "vertices": [],
+              "id": "1f1ebb2f-f679-45bd-85fd-927895d6fd5a",
+              "z": 44,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Prescription data",
+                      "font-size": "small"
+                    }
+                  }
+                }
+              ],
               "description": "Current patient medication schedule delivered over authenticated secure channel.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "protocol": "HTTPS",
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "hasOpenThreats": false,
               "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "48ce9435-3d18-4ea8-aec9-70f258b8c450",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Current authorized prescription"
-                  }
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 }
               }
-            ],
-            "source": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
             },
-            "target": {
-              "cell": "4cd430bb-de28-4c80-a201-c272dfe604b0"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
+            {
               "type": "tm.Flow",
-              "name": "Prescription dosage and schedule",
-              "description": "Prescription dosage and schedule",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "3b4ad526-de61-421f-ac78-2c43510ea27b",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Prescription dosage and schedule"
+              "size": {
+                "width": 10,
+                "height": 10
+              },
+              "smooth": false,
+              "source": {
+                "id": "626b5245-1843-40f7-8023-c6fd15e80ea7"
+              },
+              "target": {
+                "id": "713b09cd-8db3-412e-affe-6fa1e1680ed8"
+              },
+              "vertices": [],
+              "id": "d642b391-2138-43d8-aa8b-8658bad8c919",
+              "z": 48,
+              "labels": [
+                {
+                  "position": 0.5,
+                  "attrs": {
+                    "text": {
+                      "text": "Dispensing event",
+                      "font-size": "small"
+                    }
                   }
                 }
-              }
-            ],
-            "source": {
-              "cell": "4cd430bb-de28-4c80-a201-c272dfe604b0"
-            },
-            "target": {
-              "cell": "25886d4d-4788-4c1d-9f48-661503fb1ef8"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Approved single dose",
-              "description": "Approved single dose",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "16b8903b-d075-444d-8426-45b7dedb0204",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Approved single dose"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "25886d4d-4788-4c1d-9f48-661503fb1ef8"
-            },
-            "target": {
-              "cell": "626b5245-1843-40f7-8023-c6fd15e80ea7"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Dispense result event",
-              "description": "Dispense result event",
-              "outOfScope": false,
-              "reasonOutOfScope": "",
-              "protocol": "Internal / local",
-              "isEncrypted": false,
-              "isPublicNetwork": false,
-              "hasOpenThreats": false,
-              "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "f7443b70-bb02-4b63-a8a4-73cd4e591539",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Dispense result event"
-                  }
-                }
-              }
-            ],
-            "source": {
-              "cell": "626b5245-1843-40f7-8023-c6fd15e80ea7"
-            },
-            "target": {
-              "cell": "3e1fc8db-7340-4334-b2ec-e716d3ac9977"
-            },
-            "vertices": []
-          },
-          {
-            "shape": "flow",
-            "attrs": {
-              "line": {
-                "stroke": "#333333",
-                "strokeWidth": 1,
-                "targetMarker": {
-                  "name": "block"
-                },
-                "strokeDasharray": null
-              }
-            },
-            "width": 200,
-            "height": 100,
-            "zIndex": 20,
-            "connector": "smooth",
-            "data": {
-              "type": "tm.Flow",
-              "name": "Dispensing outcome / sync",
+              ],
               "description": "Report dispensing success/failure, ID and timestamp.",
               "outOfScope": false,
               "reasonOutOfScope": "",
               "protocol": "HTTPS",
               "isEncrypted": false,
               "isPublicNetwork": true,
-              "hasOpenThreats": false,
               "threats": [],
-              "isTrustBoundary": false
-            },
-            "id": "f1ac4e42-f47a-4ef8-a724-e469e4b843b3",
-            "labels": [
-              {
-                "position": 0.5,
-                "attrs": {
-                  "label": {
-                    "text": "Dispensing outcome / sync"
-                  }
+              "hasOpenThreats": false,
+              "attrs": {
+                ".connection": {
+                  "class": "connection hasNoOpenThreats isInScope"
+                },
+                ".marker-target": {
+                  "class": "marker-target hasNoOpenThreats isInScope"
                 }
               }
-            ],
-            "source": {
-              "cell": "626b5245-1843-40f7-8023-c6fd15e80ea7"
-            },
-            "target": {
-              "cell": "7c6d5647-7d9c-47f7-b2a9-a584e4abc42a"
-            },
-            "vertices": []
-          }
-        ],
+            }
+          ]
+        },
         "size": {
-          "width": 1910,
-          "height": 1330
+          "width": 2060,
+          "height": 760
         }
       }
     ]
